@@ -2,13 +2,6 @@ module "ecs" {
   source = "terraform-aws-modules/ecs/aws"
 
   cluster_name       = var.ambiante
-  fargate_capacity_providers = {
-    FARGATE = {
-      default_capacity_provider_strategy = {
-        weight = 100
-      }
-    }
-  }
 }
 
 resource "aws_ecs_task_definition" "Go-API" {
